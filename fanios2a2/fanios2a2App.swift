@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct fanios2a2App: App {
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isOnboarding {
+                OnBoardingView()
+            } else {
+                MainView()
+            }
         }
     }
 }
